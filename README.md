@@ -98,6 +98,10 @@ Utilizes GPT models to assist in build configuration and problem resolution.
 
 Apache-2.0
 
+## Ackowledgement
+
+[https://github.com/Aider-AI/aider](https://github.com/Aider-AI/aider)
+
 ## Contact
 
 pengchao.x@bytedance.com
