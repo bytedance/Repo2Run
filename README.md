@@ -1,5 +1,14 @@
 # Repo2Run
 
+<p align="center">
+  <img width="150" alt="Repo2Run" src="https://github.com/user-attachments/assets/b7ee9681-d05b-468f-bbef-3040d8c6683b" />
+</p>
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2502.13681"><img src="https://img.shields.io/badge/cs.SE-arXiv%3A2502.13681-B31B1B.svg"></a>
+  <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg"></a>
+</p>
+
 An LLM-based build agent system that helps manage and automate build processes in containerized environments. This project provides tools for handling dependencies, resolving conflicts, and managing build configurations.
 
 ## Features
@@ -73,6 +82,17 @@ Utilizes GPT models to assist in build configuration and problem resolution.
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+## Citation
+
+```bibtex
+@article{hu2025llm,
+  title={An LLM-based Agent for Reliable Docker Environment Configuration},
+  author={Hu, Ruida and Peng, Chao and Wang, Xinchen and Gao, Cuiyun},
+  journal={arXiv preprint arXiv:2502.13681},
+  year={2025}
+}
+```
 
 ## License
 
