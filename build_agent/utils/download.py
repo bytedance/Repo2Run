@@ -43,7 +43,7 @@ def download(session, waiting_list, conflict_list):
         result = ''
         if pop_item.tool.strip().lower() == 'pip':
             # success, result = run_pip(pop_item.package_name, pop_item.version_constraints)
-            command = f'python /home/tools/pip_download.py -p {pop_item.package_name}'
+            command = f'python ~/.local/bin/repo2run/tools/pip_download.py -p {pop_item.package_name}'
             if pop_item.version_constraints and len(pop_item.version_constraints) > 0:
                 command += f' -v "{pop_item.version_constraints}"'
             success, result = session.execute_simple(command)
@@ -51,7 +51,7 @@ def download(session, waiting_list, conflict_list):
             # print(pop_item.othererror)
         elif pop_item.tool.strip().lower() == 'apt':
             # success, result = run_apt(pop_item.package_name, pop_item.version_constraints)
-            command = f'python /home/tools/apt_download.py -p {pop_item.package_name}'
+            command = f'python ~/.local/bin/repo2run/tools/apt_download.py -p {pop_item.package_name}'
             if pop_item.version_constraints and len(pop_item.version_constraints) > 0:
                 command += f' -v "{pop_item.package_name}"'
             success, result = session.execute_simple(command)

@@ -40,7 +40,12 @@ pip install -r requirements.txt
 
 ## Usage
 
-Move tools `tools` to `/home/tools`.
+Set up a symbolic link of `tools` to `~/.local/bin`:
+
+```bash
+mkdir -p ~/.local/bin/repo2run
+ln -s $(pwd)/build_agent/tools ~/.local/bin/repo2run/tools
+```
 
 The main entry point is through the build agent's main script. You can run it with the following arguments:
 
