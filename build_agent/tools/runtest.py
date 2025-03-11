@@ -50,9 +50,9 @@ def run_pytest():
     if not success:
         print('Pytest is not installed in your environment. Please install the latest version of pytest using `pip install pytest`.')
         sys.exit(100)
-    # if not os.path.exists('~/.local/bin/repo2run/tools/.test_func'):
+    # if not os.path.exists('/home/tools/.test_func'):
     try:
-        with open('~/.local/bin/repo2run/tools/.test_func', 'w') as file:
+        with open('/home/tools/.test_func', 'w') as file:
             # 使用subprocess.run并传递标准输出和标准错误到文件
             result = subprocess.run(
                 # ['pytest', '/repo', '--collect-only', '-q', '--disable-warnings'],
@@ -66,11 +66,11 @@ def run_pytest():
             sys.exit(5)
         if result.returncode != 0:
             print('Error: Please modify the configuration according to the error messages below. Once all issues are resolved, rerun the tests.')
-            subprocess.run('cat ~/.local/bin/repo2run/tools/.test_func', shell=True)
+            subprocess.run('cat /home/tools/.test_func', shell=True)
             sys.exit(result.returncode)
         else:
             print('Congratulations, you have successfully configured the environment!')
-            subprocess.run('cat ~/.local/bin/repo2run/tools/.test_func', shell=True)
+            subprocess.run('cat /home/tools/.test_func', shell=True)
             # print()
             # try:
             #     subprocess.run('pipdeptree', shell=True)
@@ -78,18 +78,18 @@ def run_pytest():
             # except:
             #     pass
             sys.exit(0)
-            # test_cases = extract_test_cases('~/.local/bin/repo2run/tools/.test_func')
+            # test_cases = extract_test_cases('/home/tools/.test_func')
             # for test_case in test_cases:
             #     print(test_case)
             # sys.exit(0)
             
     except Exception as e:
         print(e)
-        subprocess.run('rm -rf ~/.local/bin/repo2run/tools/.test_func', shell=True)
+        subprocess.run('rm -rf /home/tools/.test_func', shell=True)
         print('Error: Please modify the configuration according to the error messages below. Once all issues are resolved, rerun the tests.')
         sys.exit(200)
 
-    # test_cases = extract_test_cases('~/.local/bin/repo2run/tools/.test_func')
+    # test_cases = extract_test_cases('/home/tools/.test_func')
     # pass_tests = list()
     # failed_tests = list()
     # for test_func in test_cases:

@@ -278,7 +278,7 @@ VERY IMPORTANT TIPS:
                     continue
                 if action_name in safe_cmd and '>' not in command:
                     continue
-                if command == 'python ~/.local/bin/repo2run/tools/runtest.py' or command == 'python ~/.local/bin/repo2run/tools/poetryruntest.py' or command == 'python ~/.local/bin/repo2run/tools/runpipreqs.py' or command == 'python ~/.local/bin/repo2run/tools/generate_diff.py' or command == '$pwd$' or command == '$pip list --format json$':
+                if command == 'python /home/tools/runtest.py' or command == 'python /home/tools/poetryruntest.py' or command == 'python /home/tools/runpipreqs.py' or command == 'python /home/tools/generate_diff.py' or command == '$pwd$' or command == '$pip list --format json$':
                     continue
                 if action_name == 'change_python_version':
                     res_cmd = list()
@@ -535,12 +535,12 @@ The edit format is as follows:
                     '\n'.join(success_cmds)
             else:
                 appendix = '\nThe container remains in its original state.'
-            pattern = r'python\s+~/.local/bin/repo2run/tools/pip_download.py\s+-p\s+(\S+)\s+-v\s+""([^""]+)""'
+            pattern = r'python\s+/home/tools/pip_download.py\s+-p\s+(\S+)\s+-v\s+""([^""]+)""'
 
             replacement = r'pip install \1\2'
             appendix = re.sub(pattern, replacement, appendix)
 
-            pattern1 = r'python\s+~/.local/bin/repo2run/tools/pip_download.py\s+-p\s+(\S+)'
+            pattern1 = r'python\s+/home/tools/pip_download.py\s+-p\s+(\S+)'
             replacement1 = r'pip install \1'
             appendix = re.sub(pattern1, replacement1, appendix)
             

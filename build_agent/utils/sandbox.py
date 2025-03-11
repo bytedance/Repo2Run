@@ -490,13 +490,13 @@ RUN mkdir -p /repo && git config --global --add safe.directory /repo
                         return result_message, 1
                     else:
                         if match_runtest(command):
-                            command = 'python ~/.local/bin/repo2run/tools/runtest.py'
+                            command = 'python /home/tools/runtest.py'
                         if match_poetryruntest(command):
-                            command = 'python ~/.local/bin/repo2run/tools/poetryruntest.py'
+                            command = 'python /home/tools/poetryruntest.py'
                         if match_runpipreqs(command):
-                            command = 'python ~/.local/bin/repo2run/tools/runpipreqs.py'
+                            command = 'python /home/tools/runpipreqs.py'
                         if command == 'generate_diff':
-                            command = 'python ~/.local/bin/repo2run/tools/generate_diff.py'
+                            command = 'python /home/tools/generate_diff.py'
                         if command[-1] != '&':
                             if not (command.split()[0].strip() in safe_cmd and '>' not in command):
                                 self.sandbox.commit_container()
@@ -542,7 +542,7 @@ RUN mkdir -p /repo && git config --global --add safe.directory /repo
                             self.sandbox.commands[-1]["returncode"] = 111
                             self.sandbox.commands[-1]["error_msg"] = return_code
 
-                        if return_code != 0 and not ((command == 'python ~/.local/bin/repo2run/tools/runtest.py' or command == 'python ~/.local/bin/repo2run/tools/poetryruntest.py') and return_code == 5):
+                        if return_code != 0 and not ((command == 'python /home/tools/runtest.py' or command == 'python /home/tools/poetryruntest.py') and return_code == 5):
                             if command.strip().lower().startswith('conflict'):
                                 msg = '''conflictlist command usage error, the following command formats are legal:
 1. `conflictlist solve`
@@ -578,7 +578,7 @@ Explanation: Clear all the items in the waiting list.'''
                             else:
                                 output_lines.append('The command execution failed, please carefully check the output!')
                         result_message = '\n'.join(output_lines)
-                        if 'Congratulations, you have successfully configured the environment!' in result_message or command == 'python ~/.local/bin/repo2run/tools/generate_diff.py'\
+                        if 'Congratulations, you have successfully configured the environment!' in result_message or command == 'python /home/tools/generate_diff.py'\
                             or command == 'pipdeptree --json-tree' or command == 'pipdeptree':
                             return result_message, return_code
                         else:
@@ -602,9 +602,9 @@ Explanation: Clear all the items in the waiting list.'''
                         msg = f'Running Edit...\n' + f'You are trying to modify file {file_path}, but we require that you should not modify the testing files. Please consider alternative solutions.' + '\n'
                         return msg, 1
                 if not file_path:
-                    command = f"python ~/.local/bin/repo2run/tools/code_edit.py -t '{edit_tmp_file}' -p '{project_path}'"
+                    command = f"python /home/tools/code_edit.py -t '{edit_tmp_file}' -p '{project_path}'"
                 else:
-                    command = f"python ~/.local/bin/repo2run/tools/code_edit.py -t '{edit_tmp_file}' -p '{project_path}' -f '{file_path}' -s {start_line} -e {end_line}"
+                    command = f"python /home/tools/code_edit.py -t '{edit_tmp_file}' -p '{project_path}' -f '{file_path}' -s {start_line} -e {end_line}"
                 try:
                     start_time = time.time()
                     self.sandbox.commands.append({"command": command, "returncode": -2, "time": -1, "dir": '/'})

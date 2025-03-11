@@ -52,7 +52,7 @@ def extract_package_info(package_with_constraints):
     
     return package_name
 
-# 解析python ~/.local/bin/repo2run/tools/pip_download.py指令参数
+# 解析python /home/tools/pip_download.py指令参数
 def parse_arguments(command):
     """
     解析包含命令行参数的字符串，提取参数值
@@ -223,7 +223,7 @@ def generate_statement(inner_command, pipdeptree_data):
         return -1
     if action_name in safe_cmd and '>' not in command:
         return -1
-    if command == 'python ~/.local/bin/repo2run/tools/runtest.py' or command == 'python ~/.local/bin/repo2run/tools/poetryruntest.py' or command == 'python ~/.local/bin/repo2run/tools/runpipreqs.py' or command == 'python ~/.local/bin/repo2run/tools/generate_diff.py':
+    if command == 'python /home/tools/runtest.py' or command == 'python /home/tools/poetryruntest.py' or command == 'python /home/tools/runpipreqs.py' or command == 'python /home/tools/generate_diff.py':
         return -1
     if action_name == 'change_python_version':
         return f'FROM python:{command.split(" ")[1].strip()}'
@@ -234,7 +234,7 @@ def generate_statement(inner_command, pipdeptree_data):
     if action_name == 'export':
         return f'ENV {command.split("export ")[1]}'
     
-    if command.startswith('python ~/.local/bin/repo2run/tools/pip_download.py'):
+    if command.startswith('python /home/tools/pip_download.py'):
         # print(command)
         args = parse_arguments(command)
         # print(args.package_name)
@@ -302,7 +302,7 @@ def integrate_dockerfile(root_path):
         if res.startswith('FROM'):
             base_image_st = res
             container_run_set = list()
-        elif command['command'].startswith('python ~/.local/bin/repo2run/tools/code_edit.py'):
+        elif command['command'].startswith('python /home/tools/code_edit.py'):
             if diff_no == 1:
                 container_run_set.append(f'RUN cd /repo && git apply --reject /patch/patch_{diff_no}.diff --allow-empty')
             else:
