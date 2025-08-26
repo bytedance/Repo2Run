@@ -275,9 +275,15 @@ def integrate_dockerfile(root_path):
     base_image_st = 'FROM python:3.10'
     workdir_st = f'WORKDIR /'
     # 将patch文件夹移到根目录下，为/patch
+<<<<<<< HEAD
     copy_st = f'COPY patch /patch'
     # git_apply_st = 'RUN cd /repo && git apply --reject /patch.diff'
     pre_download = 'RUN apt-get update && apt-get install -y curl\nRUN curl -sSL https://install.python-poetry.org | python -\nENV PATH="/root/.local/bin:$PATH"\nRUN pip install pytest\nRUN pip install pipdeptree'
+=======
+    copy_st = f'COPY search_patch /search_patch'
+    copy_edit_st = f'COPY code_edit.py /code_edit.py'
+    pre_download = 'RUN apt-get update && apt-get install -y curl\nRUN curl -sSL https://install.python-poetry.org | python -\nENV PATH="/root/.local/bin:$PATH"\nRUN pip install pytest pytest-xdist\nRUN pip install pipdeptree'
+>>>>>>> f21903b (Update integrate_dockerfile.py)
     git_st = f'RUN git clone https://github.com/{author_name}/{repo_name}.git'
     mkdir_st = 'RUN mkdir /repo'
     git_save_st = 'RUN git config --global --add safe.directory /repo'
@@ -317,7 +323,14 @@ def integrate_dockerfile(root_path):
     dockerfile.append(workdir_st)
     if os.path.exists(f'{root_path}/patch'):
         dockerfile.append(copy_st)
+<<<<<<< HEAD
     dockerfile.append(pre_download)
+=======
+    if len(outer_command) > 0:
+        dockerfile.append(copy_edit_st)
+    dockerfile.extend(pip_st.splitlines())
+    dockerfile.extend(pre_download.splitlines())
+>>>>>>> f21903b (Update integrate_dockerfile.py)
     dockerfile.append(git_st)
     dockerfile.append(mkdir_st)
     dockerfile.append(git_save_st)
