@@ -9,7 +9,7 @@
 </p>
 
 ## 🚀 News
-Our paper: "Repo2Run: An LLM-based Build Agent System for Containerized Environments" has been accepted by **NeurIPS 2025** main track as a **spotlight**!
+Our paper: "Repo2Run: Automated Building Executable Environment for Code Repository at Scale" has been accepted by **NeurIPS 2025** main track as a **spotlight**!
 
 An LLM-based build agent system that helps manage and automate build processes in containerized environments. This project provides tools for handling dependencies, resolving conflicts, and managing build configurations.
 
