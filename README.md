@@ -53,6 +53,26 @@ Where:
 - `sha`: The commit SHA
 - `root_path`: The root path for the build process
 
+## Note
+💡 For example, you can use the following repository—which is relatively easy to set up—to verify whether there are any issues with running it. I have already confirmed that it can be successfully configured on several mainstream models, including GPT-4o and Claude 3.5.
+
+```
+python main.py "Benexl/FastAnime" "677f4690fab4651163d0330786672cf1ba1351bf" .
+```
+
+You can use this relatively easy-to-configure repository as a baseline to evaluate whether your chosen model can effectively handle this type of task. If the entire program starts successfully, the corresponding repository contents will be saved under `utils/repo`, and an `output` folder will be created with a structure like the following:
+- `inner_commands.json`
+- `output_commands.json`
+- `pip_list.json`
+- `pipdeptree.json`
+- `pipdeptree.txt`
+- `sha.txt`
+- `test.txt`
+- `track.json`
+- `track.txt`
+
+Please note: if the `output` folder does not contain trajectory files such as `track.json`, it indicates that there was an issue during execution. You can first check it yourself; if other problems arise, feel free to open a GitHub Issue.
+
 ## Project Structure
 
 - `build_agent/` - Main package directory
