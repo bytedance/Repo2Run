@@ -103,6 +103,14 @@ Utilizes GPT models to assist in build configuration and problem resolution.
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+## Q&A
+We’ve collected some common issues for your reference. If you encounter something that isn’t covered or resolved, feel free to open an Issue.
+
+### 1. - The program won’t start, or you can’t proceed to the next step after downloading the repository
+A: I recommend first running our suggested example to verify that your workflow can run end to end. If files like `track.json` are not generated in your `output` folder, it’s usually an environment configuration issue. Check whether Docker has started correctly.
+### 2. The program runs, but the model keeps throwing errors like: “ERROR! Your reply does not contain valid block or final answer”
+A: This error originates from `agents/configuration.py`, which checks whether the LLM’s reply contains a command structure wrapped in triple backticks ```. In practice, we’ve clearly specified the required output format in the prompt; at least in our tests, GPT-4o and Claude-3.5-Sonnet did not exhibit this issue. If you encounter it, we suggest first inspecting the LLM’s raw output (e.g., `track.json` or `track.txt`).
+
 ## Citation
 
 ```bibtex
