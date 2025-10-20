@@ -45,19 +45,20 @@ pip install -r requirements.txt
 The main entry point is through the build agent's main script. You can run it with the following arguments:
 
 ```bash
-python build_agent/main.py <repository_full_name> <sha> <root_path>
+python build_agent/main.py --full_name <repository_full_name> --sha <sha> --root_path <root_path> --llm <llm_name>
 ```
 
 Where:
 - `repository_full_name`: The full name of the repository (e.g., user/repo)
 - `sha`: The commit SHA
 - `root_path`: The root path for the build process
+- `llm_name`: The name of the LLM model to use for configuration (default: gpt-4o-2024-05-13)
 
 ## 🔍 Note
 💡 For example, you can use the following repository—which is relatively easy to set up—to verify whether there are any issues with running it. I have already confirmed that it can be successfully configured on several mainstream models, including GPT-4o and Claude 3.5.
 
 ```
-python main.py "Benexl/FastAnime" "677f4690fab4651163d0330786672cf1ba1351bf" .
+python build_agent/main.py --full_name "Benexl/FastAnim" --sha "677f4690fab4651163d0330786672cf1ba1351bf" --root_path . --llm "gpt-4o-2024-05-13"
 ```
 
 You can use this relatively easy-to-configure repository as a baseline to evaluate whether your chosen model can effectively handle this type of task. If the entire program starts successfully, the corresponding repository contents will be saved under `utils/repo`, and an `output` folder will be created with a structure like the following:

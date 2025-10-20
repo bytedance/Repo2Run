@@ -86,10 +86,11 @@ def download_repo(root_path, full_name, sha):
 def main():
     # subprocess.run('docker rm -f $(docker ps -aq)', shell=True)
     parser = argparse.ArgumentParser(description='Run script with repository full name as an argument.')
-    parser.add_argument('full_name', type=str, help='The full name of the repository (e.g., user/repo).')
-    parser.add_argument('sha', type=str, help='sha')
-    parser.add_argument('root_path', type=str, help='root path')
-    
+    parser.add_argument('--full_name', type=str, help='The full name of the repository (e.g., user/repo).')
+    parser.add_argument('--sha', type=str, help='sha')
+    parser.add_argument('--root_path', type=str, help='root path')
+    parser.add_argument('--llm', type=str, default='gpt-4o-2024-05-13', help='base LLM name')
+
     args = parser.parse_args()
 
     waiting_list = WaitingList()
@@ -102,6 +103,7 @@ def main():
 
     full_name = args.full_name
     sha = args.sha
+    llm = args.llm
     print(full_name)
     # if os.path.exists(f'{root_path}/{full_name}/TIMEOUT'):
     #     sys.exit(123)

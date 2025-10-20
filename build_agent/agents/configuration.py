@@ -69,8 +69,8 @@ Explanation: Clear all the items in the conflict list.''',
     return new_text
 
 class Configuration(Agent):
-    def __init__(self, sandbox, image_name, full_name, root_dir, max_turn=70):
-        self.model = "gpt-4o-2024-05-13"
+    def __init__(self, sandbox, image_name, full_name, root_dir, llm="gpt-4o-2024-05-13", max_turn=70):
+        self.model = llm
         # self.model = "aws_claude35_sonnet"
         self.root_dir = root_dir
         self.max_turn = max_turn
