@@ -58,7 +58,7 @@ Where:
 💡 For example, you can use the following repository—which is relatively easy to set up—to verify whether there are any issues with running it. I have already confirmed that it can be successfully configured on several mainstream models, including GPT-4o and Claude 3.5.
 
 ```
-python build_agent/main.py --full_name "Benexl/FastAnim" --sha "677f4690fab4651163d0330786672cf1ba1351bf" --root_path . --llm "gpt-4o-2024-05-13"
+python build_agent/main.py --full_name "Benexl/FastAnime" --sha "677f4690fab4651163d0330786672cf1ba1351bf" --root_path . --llm "gpt-4o-2024-05-13"
 ```
 
 You can use this relatively easy-to-configure repository as a baseline to evaluate whether your chosen model can effectively handle this type of task. If the entire program starts successfully, the corresponding repository contents will be saved under `utils/repo`, and an `output` folder will be created with a structure like the following:
