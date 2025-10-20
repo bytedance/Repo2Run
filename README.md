@@ -68,9 +68,14 @@ You can use this relatively easy-to-configure repository as a baseline to evalua
 - `pipdeptree.json`
 - `pipdeptree.txt`
 - `sha.txt`
-- `test.txt`
 - `track.json`
 - `track.txt`
+
+If you successfully configure the repository, there will be the following files:
+
+- `Dockerfile`
+- `code_edit.py`
+- `test.txt`
 
 Please note: if the `output` folder does not contain trajectory files such as `track.json`, it indicates that there was an issue during execution. You can first check it yourself; if other problems arise, feel free to open a GitHub Issue.
 
