@@ -72,7 +72,6 @@ You can use this relatively easy-to-configure repository as a baseline to evalua
 - `track.txt`
 
 If you successfully configure the repository, there will be the following files:
-
 - `Dockerfile`
 - `code_edit.py`
 - `test.txt`
