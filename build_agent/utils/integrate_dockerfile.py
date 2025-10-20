@@ -322,7 +322,6 @@ def integrate_dockerfile(root_path):
 
     if len(outer_command) > 0:
         dockerfile.append(copy_edit_st)
-    dockerfile.extend(pip_st.splitlines())
     dockerfile.extend(pre_download.splitlines())
     
     dockerfile.append(git_st)
