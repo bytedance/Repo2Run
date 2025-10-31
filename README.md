@@ -152,9 +152,9 @@ A: You can modify the `generate_dockerfile` function in the `Sandbox` class loca
 ## 🔗 Citation
 
 ```bibtex
-@article{hu2025llm,
-  title={An LLM-based Agent for Reliable Docker Environment Configuration},
-  author={Hu, Ruida and Peng, Chao and Wang, Xinchen and Gao, Cuiyun},
+@article{hu2025repo2run,
+  title={Repo2Run: Automated Building Executable Environment for Code Repository at Scale},
+  author={Hu, Ruida and Peng, Chao and Wang, Xinchen and Xu, Junjielong and Gao, Cuiyun},
   journal={arXiv preprint arXiv:2502.13681},
   year={2025}
 }
