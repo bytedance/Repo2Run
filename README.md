@@ -13,9 +13,6 @@ Our paper: "Repo2Run: Automated Building Executable Environment for Code Reposit
 
 An LLM-based build agent system that helps manage and automate build processes in containerized environments. This project provides tools for handling dependencies, resolving conflicts, and managing build configurations.
 
-## Demo Video:
-https://github.com/user-attachments/assets/3d47a4af-80f9-45cf-9093-34f49be1145b
-
 ## 😊 Features
 
 - Docker-based sandbox environment for isolated builds
