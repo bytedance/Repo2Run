@@ -152,11 +152,13 @@ A: You can modify the `generate_dockerfile` function in the `Sandbox` class loca
 ## 🔗 Citation
 
 ```bibtex
-@article{hu2025repo2run,
-  title={Repo2Run: Automated Building Executable Environment for Code Repository at Scale},
-  author={Hu, Ruida and Peng, Chao and Wang, Xinchen and Xu, Junjielong and Gao, Cuiyun},
-  journal={arXiv preprint arXiv:2502.13681},
-  year={2025}
+@article{hu2026repo2run,
+  title={Repo2run: Automated building executable environment for code repository at scale},
+  author={Hu, Ruida and Peng, Chao and Xu, Junjielong and Gao, Cuiyun},
+  journal={Advances in Neural Information Processing Systems},
+  volume={38},
+  pages={32679--32718},
+  year={2026}
 }
 ```
 PS: The [maintainer and author of the paper](https://kinesiatricssxilm14.github.io/) is a current Master’s student. Since the project is largely implemented and maintained by a single person, various bugs🐛 are inevitable. You’re warmly welcome to discuss the project with me.
