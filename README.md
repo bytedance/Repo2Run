@@ -154,7 +154,7 @@ A: You can modify the `generate_dockerfile` function in the `Sandbox` class loca
 ```bibtex
 @article{hu2026repo2run,
   title={Repo2run: Automated building executable environment for code repository at scale},
-  author={Hu, Ruida and Peng, Chao and Xinchen, Wang and Xu, Junjielong and Gao, Cuiyun},
+  author={Hu, Ruida and Peng, Chao and Wang, Xinchen and Xu, Junjielong and Gao, Cuiyun},
   journal={Advances in Neural Information Processing Systems},
   volume={38},
   pages={32679--32718},
